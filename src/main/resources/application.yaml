@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ceisa
+  datasource:
+    url: jdbc:oracle:thin:@172.19.80.6:1521:orcl
+    username: bcsys
+    password: ky181818
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+    show-sql: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.yakuen.ceisa: DEBUG
+    org.springframework.jdbc.core: DEBUG
