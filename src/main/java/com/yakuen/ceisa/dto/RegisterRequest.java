@@ -1,7 +1,5 @@
 package com.yakuen.ceisa.dto;
 
-import java.util.List;
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -27,5 +25,4 @@ public class RegisterRequest {
     @Size(max = 100)
     private String fullName;
 
-    private List<String> roleCodes;
 }

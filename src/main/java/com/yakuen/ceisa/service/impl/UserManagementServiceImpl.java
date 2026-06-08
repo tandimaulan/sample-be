@@ -43,7 +43,6 @@ public class UserManagementServiceImpl implements UserManagementService {
         user.setCreatedAt(now);
         user.setUpdatedAt(now);
         userMapper.insert(user);
-
         return toResponse(user);
     }
 
@@ -68,8 +67,17 @@ public class UserManagementServiceImpl implements UserManagementService {
 
         existingUser.setEmail(request.getEmail().trim().toLowerCase());
         existingUser.setFullName(request.getFullName().trim());
-        existingUser.setActive(request.getActive());
+        
         existingUser.setUpdatedAt(LocalDateTime.now());
+        Boolean finalActive = request.getActive() == null ? existingUser.getActive()  : request.getActive();
+
+        existingUser.setActive(finalActive);
+        if (request.getRoleCodes() == null || request.getRoleCodes().isEmpty()) {
+            roleService.assignDefaultRole(existingUser.getId());
+        } else {
+            roleService.assignRolesToUser(existingUser.getId(), request.getRoleCodes());
+        }
+
         userMapper.update(existingUser);
         return toResponse(existingUser);
     }
