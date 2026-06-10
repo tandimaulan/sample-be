@@ -2,10 +2,18 @@ spring:
   application:
     name: ceisa
   datasource:
-    url: jdbc:oracle:thin:@172.19.80.6:1521:orcl
-    username: bcsys
-    password: ky181818
+    url: ${DB_URL:jdbc:oracle:thin:@172.19.80.6:1521:orcl}
+    username: ${DB_USERNAME:bcsys}
+    password: ${DB_PASSWORD:ky181818}
     driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      pool-name: CeisaHikariPool
+      minimum-idle: ${DB_POOL_MIN_IDLE:5}
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:10}
+      idle-timeout: ${DB_POOL_IDLE_TIMEOUT:300000}
+      max-lifetime: ${DB_POOL_MAX_LIFETIME:1800000}
+      connection-timeout: ${DB_POOL_CONNECTION_TIMEOUT:30000}
+      validation-timeout: ${DB_POOL_VALIDATION_TIMEOUT:5000}
   jpa:
     hibernate:
       ddl-auto: none
@@ -21,3 +29,5 @@ logging:
   level:
     com.yakuen.ceisa: DEBUG
     org.springframework.jdbc.core: DEBUG
+
+allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173}
