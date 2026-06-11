@@ -8,12 +8,13 @@ import lombok.Value;
 @Value
 @Builder
 public class UserResponse {
-    Long id;
-    String username;
-    String email;
-    String fullName;
-    Boolean active;
-    LocalDateTime createdAt;
-    LocalDateTime updatedAt;
-    List<String> roles;
+
+  Long id;
+  String username;
+  String email;
+  String fullName;
+  Boolean active;
+  LocalDateTime createdAt;
+  LocalDateTime updatedAt;
+  List<String> roles;
 }

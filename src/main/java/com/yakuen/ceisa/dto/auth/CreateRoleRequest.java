@@ -7,11 +7,11 @@ import lombok.Data;
 @Data
 public class CreateRoleRequest {
 
-    @NotBlank
-    @Size(max = 50)
-    private String roleCode;
+  @NotBlank
+  @Size(max = 50)
+  private String roleCode;
 
-    @NotBlank
-    @Size(max = 100)
-    private String roleName;
+  @NotBlank
+  @Size(max = 100)
+  private String roleName;
 }

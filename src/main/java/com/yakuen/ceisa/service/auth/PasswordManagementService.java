@@ -5,10 +5,9 @@ import com.yakuen.ceisa.dto.auth.ForgotPasswordRequest;
 import com.yakuen.ceisa.dto.auth.ResetPasswordRequest;
 
 public interface PasswordManagementService {
+  void changePassword(ChangePasswordRequest request);
 
-    void changePassword(ChangePasswordRequest request);
+  String createResetToken(ForgotPasswordRequest request);
 
-    String createResetToken(ForgotPasswordRequest request);
-
-    void resetPassword(ResetPasswordRequest request);
+  void resetPassword(ResetPasswordRequest request);
 }

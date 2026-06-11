@@ -1,5 +1,3 @@
 package com.yakuen.ceisa.service.itinventory;
 
-public interface RevisionHistoryService {
-    
-}
+public interface RevisionHistoryService {}

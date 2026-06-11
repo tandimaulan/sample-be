@@ -1,5 +1,3 @@
 package com.yakuen.ceisa.model.itinventory;
 
-public class RevisionHistory {
-    
-}
+public class RevisionHistory {}

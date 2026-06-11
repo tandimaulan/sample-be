@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 public class BcIn {
-    private String typeDoc;
-    private String cdNo;
-    private String dtCd;
+
+  private String typeDoc;
+  private String cdNo;
+  private String dtCd;
 }

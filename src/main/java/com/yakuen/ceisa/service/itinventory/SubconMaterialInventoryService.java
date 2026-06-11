@@ -1,5 +1,3 @@
 package com.yakuen.ceisa.service.itinventory;
 
-public interface SubconMaterialInventoryService {
-    
-}
+public interface SubconMaterialInventoryService {}
